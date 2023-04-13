@@ -160,12 +160,12 @@ def main():
     dataset1 = torchvision.datasets.ImageFolder('img',
                                             transform=transforms.Compose([
                                                 transforms.Resize(256),
-                                                transforms.CenterCrop(300),
+                                                transforms.CenterCrop(280),
                                                 transforms.ToTensor()]))
     dataset2 = torchvision.datasets.ImageFolder('img',
                                             transform=transforms.Compose([
                                                 transforms.Resize(256),
-                                                transforms.CenterCrop(300),
+                                                transforms.CenterCrop(280),
                                                 transforms.ToTensor()]))
     print(len(dataset1))
     data_loader = torch.utils.data.DataLoader(dataset1, batch_size=20,shuffle=True)
