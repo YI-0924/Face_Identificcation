@@ -24,7 +24,7 @@ def plotImages(img):
 	plt.style.use('seaborn')
 	plt.show()
 
-list1 = load_images_from_folder('img')
+list1 = load_images_from_folder('img/img_layer2')
 num=0
 #item means img
 for image in list1:
@@ -56,7 +56,7 @@ for image in list1:
 		# impose this blurred image on original image to get final image
 		image[y:y+roi.shape[0], x:x+roi.shape[1]] = roi
 
-# Display the output
+	# Display the output
 	cv2.imwrite('img'+str(num)+'.jpg', image)
 	num+=1
 	plotImages(image)

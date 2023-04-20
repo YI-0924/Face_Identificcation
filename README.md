@@ -2,14 +2,16 @@
 ## 0413
 
 # 完成:
+
 把MNIST的數據庫改成自己建立的image資料夾
-把gaussian.py改為一次讀多張照片
 
 # todo:
-
 
 -  為image資料夾「建立資料庫」
 
 - 確認每一輪的訓練成果顯示在終端機裡
 
-- 把pixel.py改為一次讀多張照片
+# reference:
+
+- (MNIST)https://github.com/pytorch/examples/blob/main/mnist/main.py
+- (MNIST)https://zhuanlan.zhihu.com/p/535574506
