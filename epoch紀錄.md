@@ -53,7 +53,8 @@ Test set: Average loss: 2.1252, Accuracy: 2407/10000 (24%)
 10
 Test set: Average loss: 2.1309, Accuracy: 2411/10000 (24%)
 
-##
+## std=99
+
 Train Epoch: 1 [59520/60000 (99%)]      Loss: 2.310710
 Test set: Average loss: 2.3015, Accuracy: 1029/10000 (10%)
 
@@ -76,8 +77,13 @@ Train Epoch: 7 [59520/60000 (99%)]      Loss: 2.301308
 Test set: Average loss: 2.3011, Accuracy: 1134/10000 (11%)
 
 Train Epoch: 8 [59520/60000 (99%)]      Loss: 2.301903
+Test set: Average loss: 2.3010, Accuracy: 1135/10000 (11%)
 
+Train Epoch: 9 [59520/60000 (99%)]      Loss: 2.302740
+Test set: Average loss: 2.3010, Accuracy: 1135/10000 (11%)
 
+Train Epoch: 10 [59520/60000 (99%)]     Loss: 2.302340
+Test set: Average loss: 2.3010, Accuracy: 1135/10000 (11%)
 
 ## std=33
 > 4/20 20:22
