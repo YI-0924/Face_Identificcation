@@ -18,7 +18,9 @@ Train Epoch: 8 [59520/60000 (99%)]      Loss: 0.002103
 Test set: Average loss: 0.0465, Accuracy: 9849/10000 (98%)
 
 Train Epoch: 9 [59520/60000 (99%)]      Loss: 0.006162
-Test set: Average loss: 0.0471, Accuracy: 9849/10000 (98%)
+Test set: Average loss: 0.0471, 
+
+Accuracy: 9849/10000 (98%)
 
 > 4/20 20:22
 > mean = 0 ; std = 33
@@ -48,7 +50,9 @@ Train Epoch: 8 [59520/60000 (99%)]      Loss: 2.301333
 Test set: Average loss: 2.3010, Accuracy: 1135/10000 (11%)
 
 Train Epoch: 9 [59520/60000 (99%)]      Loss: 2.303441
-Test set: Average loss: 2.3010, Accuracy: 1135/10000 (11%)
+Test set: Average loss: 2.3010, 
+
+Accuracy: 1135/10000 (11%)
 
 
 #CIFAR-10
@@ -96,7 +100,9 @@ Epoch: 8 | Step: 300 | Loss: 2.302215099334717
 
 Epoch: 9 | Step: 300 | Loss: 2.3018505573272705
 
-Epoch: 10 | Step: 300 | Loss: 2.303859233856201 Accuracy: 10.00%
+Epoch: 10 | Step: 300 | Loss: 2.303859233856201 
+
+Accuracy: 10.00%
 
 > mean = 0 ; std = 45
 
