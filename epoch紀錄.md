@@ -53,6 +53,7 @@ Test set: Average loss: 2.1252, Accuracy: 2407/10000 (24%)
 10
 Test set: Average loss: 2.1309, Accuracy: 2411/10000 (24%)
 
+##
 Train Epoch: 1 [59520/60000 (99%)]      Loss: 2.310710
 Test set: Average loss: 2.3015, Accuracy: 1029/10000 (10%)
 
