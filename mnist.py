@@ -11,7 +11,17 @@ import cv2
 import matplotlib.pyplot as plt
 import os
 
-
+class AddGaussianNoise(object):
+    def __init__(self, mean=0., std=1.):
+        self.std = std
+        self.mean = mean
+        
+    def __call__(self, tensor):
+        return tensor + torch.randn(tensor.size()) * self.std + self.mean
+    
+    def __repr__(self):
+        return self.__class__.__name__ + '(mean={0}, std={1})'.format(self.mean, self.std)
+    
 def add_noise(dataset):
 	noisy_data = []
 	k = input("Gaussian parameter k (must be odd) : ")
@@ -143,16 +153,17 @@ def main():
 
 	transform=transforms.Compose([
 		transforms.ToTensor(),
-		transforms.Normalize((0.1307,), (0.3081,))
+		transforms.Normalize((0.1307,), (0.3081,)),
+        AddGaussianNoise(0., 1.)
 		])
 	
 	dataset1 = datasets.MNIST('../data', train=True, download=True,
 					   transform=transform)
-	dataset1 = add_noise(dataset1)
+	# dataset1 = add_noise(dataset1)
 
 	dataset2 = datasets.MNIST('../data', train=False,
 					   transform=transform)
-	dataset2 = add_noise(dataset2)
+	# dataset2 = add_noise(dataset2)
 
 	train_loader = torch.utils.data.DataLoader(dataset1,**train_kwargs)
 	test_loader = torch.utils.data.DataLoader(dataset2, **test_kwargs)
