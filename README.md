@@ -15,3 +15,4 @@
 
 - (MNIST)https://github.com/pytorch/examples/blob/main/mnist/main.py
 - (MNIST)https://zhuanlan.zhihu.com/p/535574506
+- (MNIST)https://discuss.pytorch.org/t/how-to-add-noise-to-mnist-dataset-when-using-pytorch/59745
