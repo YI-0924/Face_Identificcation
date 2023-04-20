@@ -1,4 +1,6 @@
 # MNIST加高斯 
+
+## std=1
 > 4/20 19:45
 > mean = 0 ; std = 1
 
@@ -18,10 +20,40 @@ Train Epoch: 8 [59520/60000 (99%)]      Loss: 0.002103
 Test set: Average loss: 0.0465, Accuracy: 9849/10000 (98%)
 
 Train Epoch: 9 [59520/60000 (99%)]      Loss: 0.006162
-Test set: Average loss: 0.0471, 
+Test set: Average loss: 0.0471, Accuracy: 9849/10000 (98%)
 
-Accuracy: 9849/10000 (98%)
+## std=45
+1
+Test set: Average loss: 2.2997, Accuracy: 1096/10000 (11%)
 
+2
+Test set: Average loss: 2.2013, Accuracy: 1963/10000 (20%)
+
+3
+Test set: Average loss: 2.1704, Accuracy: 2137/10000 (21%)
+
+4
+Test set: Average loss: 2.1580, Accuracy: 2262/10000 (23%)
+
+5
+Test set: Average loss: 2.1533, Accuracy: 2298/10000 (23%)
+
+6
+Test set: Average loss: 2.1382, Accuracy: 2322/10000 (23%)
+
+7
+Test set: Average loss: 2.1473, Accuracy: 2322/10000 (23%)
+
+8
+Test set: Average loss: 2.1300, Accuracy: 2390/10000 (24%)
+
+9
+Test set: Average loss: 2.1252, Accuracy: 2407/10000 (24%)
+
+10
+Test set: Average loss: 2.1309, Accuracy: 2411/10000 (24%)
+
+## std=33
 > 4/20 20:22
 > mean = 0 ; std = 33
 
@@ -50,12 +82,13 @@ Train Epoch: 8 [59520/60000 (99%)]      Loss: 2.301333
 Test set: Average loss: 2.3010, Accuracy: 1135/10000 (11%)
 
 Train Epoch: 9 [59520/60000 (99%)]      Loss: 2.303441
-Test set: Average loss: 2.3010, 
+Test set: Average loss: 2.3010, Accuracy: 1135/10000 (11%)
 
-Accuracy: 1135/10000 (11%)
+---
 
+# CIFAR-10
 
-#CIFAR-10
+## std=1
 > mean = 0 ; std = 1
 
 Epoch: 1 | Step: 300 | Loss: 1.415763020515442
@@ -80,7 +113,7 @@ Epoch: 10 | Step: 300 | Loss: 0.6949636936187744
 
 Accuracy: 70.40%
 
-
+## std=15
 > mean = 0 ; std = 15
 Epoch: 1 | Step: 300 | Loss: 2.3014073371887207
 
@@ -100,10 +133,9 @@ Epoch: 8 | Step: 300 | Loss: 2.302215099334717
 
 Epoch: 9 | Step: 300 | Loss: 2.3018505573272705
 
-Epoch: 10 | Step: 300 | Loss: 2.303859233856201 
+Epoch: 10 | Step: 300 | Loss: 2.303859233856201 Accuracy: 10.00%
 
-Accuracy: 10.00%
-
+## std=45
 > mean = 0 ; std = 45
 
 Epoch: 1 | Step: 300 | Loss: 2.3010764122009277
@@ -128,6 +160,7 @@ Epoch: 10 | Step: 300 | Loss: 2.3028767108917236
 
 Accuracy: 10.02%
 
+## std=99
 > 4/20 21:42
 > mean = 0 ; std = 99
 
