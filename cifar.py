@@ -121,7 +121,7 @@ for epoch in range(EPOCH):
     optimizer.step()
 
     if step % 100 == 0:
-      print('Epoch: {} | Step: {} | Loss: {}'.format(epoch + 1, step, loss))
+        print('Epoch: {} | Step: {} | Loss: {}'.format(epoch + 1, step, loss))
 
 if not os.path.exists(MODELS_PATH):
   os.mkdir(MODELS_PATH)
