@@ -26,20 +26,57 @@ from torch.optim import lr_scheduler
 from torch.autograd import Variable
 import PIL.ImageOps    
 import torch.nn.functional as F
+import matplotlib.pyplot as plt
+import torch.nn.functional as F
+import torch.utils.data as utils
+from torchvision import datasets
+import torchvision.transforms as transforms
+from torch.autograd import Variable
+import matplotlib.pyplot as plt
+import torchvision.utils
+import time
+import copy
+from torch.optim import lr_scheduler
+from torch.autograd import Variable
+import PIL.ImageOps    
+import torch.nn.functional as F
 
 training_dir = "./faces/training/"
 test_dir = "./faces/testing/"
 txt_root = "./attPath.txt" # 放所有att檔案的path
+txt_root_test = "./attPathTest.txt"
 train_batch_size = 10
 
-# 把所有att檔案的path 寫到同個txt裡
+class AddGaussianNoise(object):
+    def __init__(self, mean=0., std=45.):
+        self.std = std
+        self.mean = mean
+        
+    def __call__(self, tensor):
+        return tensor + torch.randn(tensor.size()) * self.std + self.mean
+    
+    def __repr__(self):
+        return self.__class__.__name__ + '(mean={0}, std={1})'.format(self.mean, self.std)
+
 def convert(train=True):
     if(train):
         f=open(txt_root, 'w')
         data_path=training_dir
         if(not os.path.exists(data_path)):
             os.makedirs(data_path)
-        for i in range(40):
+        for i in range(37):
+              for j in range(10):
+                    img_path = data_path+'s'+str(i+3)+'/'+str(j+1)+'.pgm'
+                    f.write(img_path+' '+str(i)+'\n')      
+        f.close()
+
+def convert_test(train, txt_root_test, test_dir):
+    if(train!=True):
+        f=open(txt_root_test, 'w')
+        data_path=test_dir
+        if(not os.path.exists(data_path)):
+            os.makedirs(data_path)
+        for i in range(3):
               for j in range(10):
                     img_path = data_path+'s'+str(i+1)+'/'+str(j+1)+'.pgm'
                     f.write(img_path+' '+str(i)+'\n')      
@@ -156,14 +193,27 @@ class ContrastiveLoss(torch.nn.Module):
         return loss_contrastive
 
 if __name__ == '__main__':
-    train_data = SiameseNetworkDataset(txt = txt_root,
-                                       transform=transforms.Compose([
-                                           transforms.Resize((100,100)),
-                                           transforms.ToTensor(),
-                                           AddGaussianNoise(0., 45.)
-                                           ]), 
-                                       should_invert=False)     #Resize到100,100
+    train_data = SiameseNetworkDataset(txt = txt_root, dir = training_dir,
+                                    transform=transforms.Compose(
+                [transforms.Resize((100,100)),transforms.ToTensor(),AddGaussianNoise(0., 45.)]
+                ), 
+                                    should_invert=False)     #Resize到100,100
     train_dataloader = DataLoader(dataset=train_data, shuffle=True, num_workers=2, batch_size = train_batch_size)
+
+
+
+    train=False
+    convert_test(train, txt_root_test, test_dir)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = SiameseNetwork().to(device)
+    test_data = SiameseNetworkDataset(txt = txt_root_test, dir = test_dir,
+                                    transform=transforms.Compose(
+                [transforms.Resize((100,100)),transforms.ToTensor(),AddGaussianNoise(0., 45.)]
+                ), 
+                                    should_invert=False)     #Resize到100,100
+
+    test_dataloader = DataLoader(dataset=test_data, num_workers=6,batch_size=1,shuffle=True)
+
 
     #net = SiameseNetwork().cuda()     # GPU加速
     net = SiameseNetwork()
@@ -191,7 +241,6 @@ if __name__ == '__main__':
                 iteration_number += 10
                 counter.append(iteration_number)
                 loss_history.append(loss_contrastive.item())
-<<<<<<< HEAD
     plt.plot(counter, loss_history)     # plot 损失函数变化曲线
     plt.show()
 
@@ -214,8 +263,3 @@ if __name__ == '__main__':
         
     accuracy=(correct/len(test_dataloader))*100
     print("Accuracy:{}%".format(accuracy))
-=======
-    
-    plt.plot(counter, loss_history)
-    plt.show()     # plot 损失函数变化曲线
->>>>>>> parent of 1657ca6 (att: 整理function，並更改convert function)
