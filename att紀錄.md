@@ -1,5 +1,5 @@
 # AT&T
-## 尚未做高斯模糊
+## 尚未做高斯模糊 未加test
 Epoch:0,  Current loss 0.9853910207748413
 
 Epoch:0,  Current loss 17.208559036254883
@@ -121,3 +121,100 @@ Epoch:13,  Current loss 0.9938953518867493
 Epoch:13,  Current loss 0.9705678224563599
 
 Epoch:13,  Current loss 0.8267667889595032
+
+
+# 高斯模糊係數45
+Epoch:0,  Current loss 0.719250500202179
+
+Epoch:0,  Current loss 2.044064998626709
+
+Epoch:0,  Current loss 1.646612524986267
+
+Epoch:0,  Current loss 2.1577365398406982
+
+Epoch:1,  Current loss 1.3687164783477783
+
+Epoch:1,  Current loss 1.0713560581207275
+
+Epoch:1,  Current loss 1.5569089651107788
+
+Epoch:1,  Current loss 2.2212471961975098
+
+Epoch:2,  Current loss 1.4406378269195557
+
+Epoch:2,  Current loss 1.2325572967529297
+
+Epoch:2,  Current loss 1.1886123418807983
+
+Epoch:2,  Current loss 0.8900996446609497
+
+Epoch:3,  Current loss 0.7466079592704773
+
+Epoch:3,  Current loss 1.2389813661575317
+
+Epoch:3,  Current loss 1.0756052732467651
+
+Epoch:3,  Current loss 1.0216978788375854
+
+Epoch:4,  Current loss 1.0293872356414795
+
+Epoch:4,  Current loss 1.0313899517059326
+
+Epoch:4,  Current loss 1.1257325410842896
+
+Epoch:4,  Current loss 1.515372633934021
+
+Epoch:5,  Current loss 0.8926658630371094
+
+Epoch:5,  Current loss 0.8365269899368286
+
+Epoch:5,  Current loss 1.0642354488372803
+
+Epoch:5,  Current loss 1.1237549781799316
+
+Epoch:6,  Current loss 1.1946310997009277
+
+Epoch:6,  Current loss 1.436206579208374
+
+Epoch:6,  Current loss 1.1406939029693604
+
+Epoch:6,  Current loss 0.9440685510635376
+
+Epoch:7,  Current loss 1.333204746246338
+
+Epoch:7,  Current loss 1.3192658424377441
+
+Epoch:7,  Current loss 1.6219831705093384
+
+Epoch:7,  Current loss 0.7600640654563904
+
+Epoch:8,  Current loss 2.2369227409362793
+
+Epoch:8,  Current loss 1.0371884107589722
+
+Epoch:8,  Current loss 1.3159540891647339
+
+Epoch:8,  Current loss 1.6949422359466553
+
+Epoch:9,  Current loss 1.379101276397705
+
+Epoch:9,  Current loss 1.9596121311187744
+
+Epoch:9,  Current loss 1.1448876857757568
+
+Epoch:9,  Current loss 1.1273945569992065
+
+Epoch:10,  Current loss 0.7090370059013367
+
+Epoch:10,  Current loss 0.7864696979522705
+
+Epoch:10,  Current loss 0.9056957364082336
+
+
+Epoch:13,  Current loss 1.283212423324585
+
+Epoch:13,  Current loss 1.0582935810089111
+
+Epoch:13,  Current loss 1.0238769054412842
+
+Accuracy:3.3333333333333335%
