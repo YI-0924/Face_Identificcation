@@ -121,3 +121,50 @@ Epoch:13,  Current loss 0.9938953518867493
 Epoch:13,  Current loss 0.9705678224563599
 
 Epoch:13,  Current loss 0.8267667889595032
+
+## 第二次，也沒做高斯
+
+Epoch:1,  Current loss 1.9587618112564087
+Epoch:1,  Current loss 19.242748260498047
+Epoch:1,  Current loss 4.832180023193359
+Epoch:1,  Current loss 2.9395852088928223
+
+Epoch:2,  Current loss 3.8469531536102295
+Epoch:2,  Current loss 1.9884074926376343
+Epoch:2,  Current loss 1.1759623289108276
+Epoch:2,  Current loss 0.7104915380477905
+
+Epoch:3,  Current loss 1.7245222330093384
+Epoch:3,  Current loss 0.8134058117866516
+Epoch:3,  Current loss 0.9904338717460632
+Epoch:3,  Current loss 1.4223241806030273
+
+Epoch:4,  Current loss 3.1268653869628906
+Epoch:4,  Current loss 1.5624303817749023
+Epoch:4,  Current loss 1.745064377784729
+Epoch:4,  Current loss 0.761624276638031
+
+Epoch:5,  Current loss 5.33419942855835
+Epoch:5,  Current loss 2.396604061126709
+Epoch:5,  Current loss 0.9164215326309204
+Epoch:5,  Current loss 10.162490844726562
+
+Epoch:6,  Current loss 1.4012346267700195
+Epoch:6,  Current loss 2.3773112297058105
+Epoch:6,  Current loss 0.9221799969673157
+Epoch:6,  Current loss 3.7751331329345703
+
+Epoch:7,  Current loss 0.7773923277854919
+Epoch:7,  Current loss 3.3045437335968018
+Epoch:7,  Current loss 1.8071138858795166
+Epoch:7,  Current loss 1.1421396732330322
+
+Epoch:8,  Current loss 1.0961905717849731
+Epoch:8,  Current loss 0.5166711807250977
+Epoch:8,  Current loss 1.088305950164795
+Epoch:8,  Current loss 0.8849493265151978
+
+Epoch:9,  Current loss 2.332336902618408
+Epoch:9,  Current loss 0.7025264501571655
+Epoch:9,  Current loss 1.234128713607788
+Epoch:9,  Current loss 1.6866800785064697
