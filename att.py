@@ -183,6 +183,7 @@ if __name__ == '__main__':
         convert(train=False)
     
     print("Total epoch:", train_number_epochs,",  Batch size:",train_batch_size, ",  LR:",LR, ",  Gaussian Factor:", Gaussian_factor)
+
     test_transform=transforms.Compose([
         transforms.Resize((100,100)),
         transforms.ToTensor(),
@@ -207,6 +208,11 @@ if __name__ == '__main__':
         num_workers=2, 
         batch_size = train_batch_size
     )
+
+    test_dataloader = DataLoader(dataset=test_data, num_workers=6,batch_size=1,shuffle=True)
+
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = SiameseNetwork().to(device)
 
     #net = SiameseNetwork().cuda()     # GPU加速
     net = SiameseNetwork()
@@ -235,28 +241,30 @@ if __name__ == '__main__':
                 iteration_number += 10
                 counter.append(iteration_number)
                 loss_history.append(loss_contrastive.item())
-    
+    """
     if not os.path.exists(MODELS_PATH):
         os.mkdir(MODELS_PATH)
     torch.save(net, os.path.join(MODELS_PATH, 'att_model.pt'))
-    
     """
-    test_loader = DataLoader(
-        dataset=test_data, 
-        shuffle=False, 
-        num_workers=2, 
-        batch_size = len(test_data) # train_batch_size
-    )
-
-    test_x, test_y = next(iter(test_loader))
-
-    net.eval()
-    prediction = torch.argmax(net(test_x), 1)
-    acc = torch.eq(prediction, test_y)
-    print('Accuracy: {:.2%}'.format(
-            (torch.sum(acc) / acc.shape[0]).item())
-         )
-    """
-
     plt.plot(counter, loss_history)
     plt.show()     # plot 損失函數變化曲線
+
+    accuracy=0
+    counter=0
+    correct=0
+    for i, data in enumerate(test_dataloader,0): 
+        x0, x1 , label = data
+        # onehsot applies in the output of 128 dense vectors which is then converted to 2 dense vectors
+        output1,output2 = model(x0.to(device),x1.to(device))
+        res=torch.abs(output1 - output2)
+        label=label[0].tolist()
+        label=int(label[0])
+        result=torch.max(res,1)[1].data[0].tolist()
+        if label == result:
+            correct=correct+1
+        counter=counter+1
+        if counter ==20:
+            break
+        
+    accuracy=(correct/len(test_dataloader))*100
+    print("Accuracy:{}%".format(accuracy))
