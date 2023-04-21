@@ -10,7 +10,7 @@ from torch import optim
 import random
 import os
 from torch.autograd import Variable
-from matplotlib.pyplot import show
+import matplotlib.pyplot as plt
 import linecache
 
 training_dir = "./faces/training/"
@@ -144,7 +144,7 @@ if __name__ == '__main__':
     counter = []
     loss_history =[]
     iteration_number =0
-    train_number_epochs = 14
+    train_number_epochs = 3
 
     for epoch in range(0, train_number_epochs):
         for i, data in enumerate(train_dataloader, 0):
@@ -161,4 +161,6 @@ if __name__ == '__main__':
                 iteration_number += 10
                 counter.append(iteration_number)
                 loss_history.append(loss_contrastive.item())
-    show(counter, loss_history)     # plot 损失函数变化曲线
+    
+    plt.plot(counter, loss_history)
+    plt.show()     # plot 损失函数变化曲线
