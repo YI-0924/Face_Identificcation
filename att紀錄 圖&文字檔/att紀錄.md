@@ -142,6 +142,19 @@ Epoch:9,  Current loss 0.7025264501571655
 Epoch:9,  Current loss 1.234128713607788
 Epoch:9,  Current loss 1.6866800785064697
 
+## 高斯15
+Total epoch: 10 ,  Batch size: 128 ,  LR: 0.0005 ,  Gaussian Factor: 15
+Epoch:0,  Current loss 1.5508753061294556
+Epoch:1,  Current loss 3.2023730278015137
+Epoch:2,  Current loss 1.3681507110595703
+Epoch:3,  Current loss 1.201878547668457
+Epoch:4,  Current loss 1.4242068529129028
+Epoch:5,  Current loss 1.0589919090270996
+Epoch:6,  Current loss 1.2389050722122192
+Epoch:7,  Current loss 1.1500558853149414
+Epoch:8,  Current loss 1.1534345149993896
+Epoch:9,  Current loss 1.213819980621338
+
 ## 高斯45
 Epoch:1,  Current loss 0.8798612356185913
 Epoch:1,  Current loss 2.0908925533294678
@@ -192,3 +205,16 @@ Epoch:10,  Current loss 1.2924325466156006
 Epoch:10,  Current loss 0.9397551417350769
 Epoch:10,  Current loss 1.368523359298706
 Epoch:10,  Current loss 1.2268714904785156
+
+## 高斯99
+Total epoch: 10 ,  Batch size: 128 ,  LR: 0.0005 ,  Gaussian Factor: 99
+Epoch:0,  Current loss 1.9026153087615967
+Epoch:1,  Current loss 1.6176093816757202
+Epoch:2,  Current loss 1.392351746559143
+Epoch:3,  Current loss 1.357841968536377
+Epoch:4,  Current loss 1.3011773824691772
+Epoch:5,  Current loss 1.108911156654358
+Epoch:6,  Current loss 1.1456871032714844
+Epoch:7,  Current loss 1.2177082300186157
+Epoch:8,  Current loss 1.2198021411895752
+Epoch:9,  Current loss 1.2876670360565186
