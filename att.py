@@ -18,6 +18,7 @@ test_dir = "./faces/testing/"
 txt_root = "./attPath.txt" # 放所有att檔案的path
 train_batch_size = 10
 
+# 把所有att檔案的path 寫到同個txt裡
 def convert(train=True):
     if(train):
         f=open(txt_root, 'w')
@@ -29,6 +30,18 @@ def convert(train=True):
                     img_path = data_path+'s'+str(i+1)+'/'+str(j+1)+'.pgm'
                     f.write(img_path+' '+str(i)+'\n')      
         f.close()
+
+# 高斯模糊
+class AddGaussianNoise(object):
+    def __init__(self, mean=0., std=45.):
+        self.std = std
+        self.mean = mean
+        
+    def __call__(self, tensor):
+        return tensor + torch.randn(tensor.size()) * self.std + self.mean
+    
+    def __repr__(self):
+        return self.__class__.__name__ + '(mean={0}, std={1})'.format(self.mean, self.std)
 
 class SiameseNetworkDataset(Dataset):
     def __init__(self, txt, transform=None, target_transform=None, should_invert=False):  
@@ -129,10 +142,12 @@ class ContrastiveLoss(torch.nn.Module):
 
 if __name__ == '__main__':
     train_data = SiameseNetworkDataset(txt = txt_root,
-                                    transform=transforms.Compose(
-                [transforms.Resize((100,100)),transforms.ToTensor()]
-                ), 
-                                    should_invert=False)     #Resize到100,100
+                                       transform=transforms.Compose([
+                                           transforms.Resize((100,100)),
+                                           transforms.ToTensor(),
+                                           AddGaussianNoise(0., 45.)
+                                           ]), 
+                                       should_invert=False)     #Resize到100,100
     train_dataloader = DataLoader(dataset=train_data, shuffle=True, num_workers=2, batch_size = train_batch_size)
 
     #net = SiameseNetwork().cuda()     # GPU加速
@@ -144,9 +159,9 @@ if __name__ == '__main__':
     counter = []
     loss_history =[]
     iteration_number =0
-    train_number_epochs = 3
+    train_number_epochs = 10
 
-    for epoch in range(0, train_number_epochs):
+    for epoch in range(1, train_number_epochs + 1):
         for i, data in enumerate(train_dataloader, 0):
             img0, img1, label = data
             img0, img1, label = Variable(img0), Variable(img1), Variable(label)
@@ -157,7 +172,7 @@ if __name__ == '__main__':
             optimizer.step()
             
             if i%10 == 0:
-                print("Epoch:{},  Current loss {}\n".format(epoch,loss_contrastive.item()))
+                print("Epoch:{},  Current loss {}".format(epoch,loss_contrastive.item()))
                 iteration_number += 10
                 counter.append(iteration_number)
                 loss_history.append(loss_contrastive.item())
