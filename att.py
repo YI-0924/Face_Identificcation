@@ -10,7 +10,7 @@ from torch import optim
 import random
 import os
 from torch.autograd import Variable
-from matplotlib.pyplot import show
+import matplotlib.pyplot as plt
 import linecache
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
@@ -67,6 +67,18 @@ def convert_test(train, txt_root_test, test_dir):
                     img_path = data_path+'s'+str(i+1)+'/'+str(j+1)+'.pgm'
                     f.write(img_path+' '+str(i)+'\n')      
         f.close()
+
+# 高斯模糊
+class AddGaussianNoise(object):
+    def __init__(self, mean=0., std=45.):
+        self.std = std
+        self.mean = mean
+        
+    def __call__(self, tensor):
+        return tensor + torch.randn(tensor.size()) * self.std + self.mean
+    
+    def __repr__(self):
+        return self.__class__.__name__ + '(mean={0}, std={1})'.format(self.mean, self.std)
 
 class SiameseNetworkDataset(Dataset):
     def __init__(self, txt, dir, transform=None, target_transform=None, should_invert=False):  
@@ -198,9 +210,9 @@ if __name__ == '__main__':
     counter = []
     loss_history =[]
     iteration_number =0
-    train_number_epochs = 14
+    train_number_epochs = 10
 
-    for epoch in range(0, train_number_epochs):
+    for epoch in range(1, train_number_epochs + 1):
         for i, data in enumerate(train_dataloader, 0):
             img0, img1, label = data
             img0, img1, label = Variable(img0), Variable(img1), Variable(label)
@@ -211,7 +223,7 @@ if __name__ == '__main__':
             optimizer.step()
             
             if i%10 == 0:
-                print("Epoch:{},  Current loss {}\n".format(epoch,loss_contrastive.item()))
+                print("Epoch:{},  Current loss {}".format(epoch,loss_contrastive.item()))
                 iteration_number += 10
                 counter.append(iteration_number)
                 loss_history.append(loss_contrastive.item())
