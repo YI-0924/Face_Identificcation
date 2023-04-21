@@ -12,11 +12,27 @@ import os
 from torch.autograd import Variable
 import matplotlib.pyplot as plt
 import linecache
+import matplotlib.pyplot as plt
+import torch.nn.functional as F
+import torch.utils.data as utils
+from torchvision import datasets
+import torchvision.transforms as transforms
+from torch.autograd import Variable
+import matplotlib.pyplot as plt
+import torchvision.utils
+import time
+import copy
+from torch.optim import lr_scheduler
+from torch.autograd import Variable
+import PIL.ImageOps    
+import torch.nn.functional as F
 
 training_dir = "./faces/training/"
 testing_dir = "./faces/testing/"
 training_txt_root = "./attPath-Train.txt" # 放所有att檔案的path
 testing_txt_root  = "./attPath-Test.txt" # 放所有att檔案的path
+test_dir = "./faces/testing/"
+txt_root = "./attPath.txt" # 放所有att檔案的path
 train_batch_size = 10
 train_number_epochs = 10
 MODELS_PATH = './models'
@@ -48,7 +64,7 @@ def convert(train=True):
             if(i[0] == 'R'): continue # README不要讀進去
             img_path = root + '/' + i
             f.write(img_path + ' ' + str(num) +'\n')  
-            num += 1
+            num += 1    
     f.close()
 
 # 高斯模糊
