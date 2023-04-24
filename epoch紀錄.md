@@ -137,26 +137,28 @@ Epoch: 10 | Step: 300 | Loss: 0.6949636936187744
 Accuracy: 70.40%
 
 ## std=15
-> mean = 0 ; std = 15
-Epoch: 1 | Step: 300 | Loss: 2.3014073371887207
 
-Epoch: 2 | Step: 300 | Loss: 2.302840232849121
+Epoch: 1 | Step: 300 | Loss: 2.3024985790252686
 
-Epoch: 3 | Step: 300 | Loss: 2.305891752243042
+Epoch: 2 | Step: 300 | Loss: 2.3022146224975586
 
-Epoch: 4 | Step: 300 | Loss: 2.3018858432769775
+Epoch: 3 | Step: 300 | Loss: 2.3121232986450195
 
-Epoch: 5 | Step: 300 | Loss: 2.302834987640381
+Epoch: 4 | Step: 300 | Loss: 2.2731881141662598
 
-Epoch: 6 | Step: 300 | Loss: 2.30277943611145
+Epoch: 5 | Step: 300 | Loss: 2.269408941268921
 
-Epoch: 7 | Step: 300 | Loss: 2.302241325378418
+Epoch: 6 | Step: 300 | Loss: 2.233888626098633
 
-Epoch: 8 | Step: 300 | Loss: 2.302215099334717
+Epoch: 7 | Step: 300 | Loss: 2.2476513385772705
 
-Epoch: 9 | Step: 300 | Loss: 2.3018505573272705
+Epoch: 8 | Step: 300 | Loss: 2.2634530067443848
 
-Epoch: 10 | Step: 300 | Loss: 2.303859233856201 Accuracy: 10.00%
+Epoch: 9 | Step: 300 | Loss: 2.2495205402374268
+
+Epoch: 10 | Step: 300 | Loss: 2.2897636890411377
+
+Accuracy: 15.49%
 
 ## std=45
 > mean = 0 ; std = 45
