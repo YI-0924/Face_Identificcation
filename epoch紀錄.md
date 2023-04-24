@@ -25,14 +25,23 @@ Test set: Average loss: 0.0471, Accuracy: 9849/10000 (98%)
 ## std=15
 
 Test set: Average loss: 2.1272, Accuracy: 2382/10000 (24%) 
+
 Test set: Average loss: 2.1301, Accuracy: 2338/10000 (23%) 
+
 Test set: Average loss: 2.1151, Accuracy: 2470/10000 (25%)
+
 Test set: Average loss: 2.1156, Accuracy: 2414/10000 (24%) 
+
 Test set: Average loss: 2.1058, Accuracy: 2505/10000 (25%) 
+
 Test set: Average loss: 2.1002, Accuracy: 2515/10000 (25%) 
+
 Test set: Average loss: 2.0949, Accuracy: 2535/10000 (25%) 
+
 Test set: Average loss: 2.0916, Accuracy: 2579/10000 (26%) 
+
 Test set: Average loss: 2.1001, Accuracy: 2517/10000 (25%) 
+
 Test set: Average loss: 2.1036, Accuracy: 2482/10000 (25%)
 
 
