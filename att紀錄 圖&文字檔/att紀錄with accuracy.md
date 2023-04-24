@@ -1,26 +1,27 @@
 # AT&T
-### 15
-Epoch:1,  Current loss 1.9753272533416748
+# att 高斯15 batch=128
+Total epoch: 10 ,  Batch size: 128 ,  LR: 0.0005 ,  Gaussian Factor: 15
+Epoch:1,  Current loss 1.4851990938186646
 
-Epoch:2,  Current loss 1.3823368549346924
+Epoch:2,  Current loss 1.1546355485916138
 
-Epoch:3,  Current loss 1.2430574893951416
+Epoch:3,  Current loss 1.1856284141540527
 
-Epoch:4,  Current loss 1.0807934999465942
+Epoch:4,  Current loss 1.2831918001174927
 
-Epoch:5,  Current loss 1.8377269506454468
+Epoch:5,  Current loss 1.2989729642868042
 
-Epoch:6,  Current loss 1.5000417232513428
+Epoch:6,  Current loss 1.188596248626709
 
-Epoch:7,  Current loss 1.1810734272003174
+Epoch:7,  Current loss 1.1629316806793213
 
-Epoch:8,  Current loss 1.2475004196166992
+Epoch:8,  Current loss 1.087334394454956
 
-Epoch:9,  Current loss 0.9385123252868652
+Epoch:9,  Current loss 1.100046992301941
 
-Epoch:10,  Current loss 1.0789916515350342
+Epoch:10,  Current loss 1.2165803909301758
 
-Accuracy:13.333333333333334%
+Accuracy:26.666666666666668%
 
 ###45
 Epoch:1,  Current loss 1.3451334238052368
