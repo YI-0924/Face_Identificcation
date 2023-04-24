@@ -23,27 +23,17 @@ Epoch:10,  Current loss 1.0789916515350342
 Accuracy:13.333333333333334%
 
 ###45
-Epoch:1,  Current loss 0.9412535429000854
-
-Epoch:2,  Current loss 2.0462405681610107
-
-Epoch:3,  Current loss 0.9726687669754028
-
-Epoch:4,  Current loss 0.7442334890365601
-
-Epoch:5,  Current loss 1.7868502140045166
-
-Epoch:6,  Current loss 1.3416904211044312
-
-Epoch:7,  Current loss 0.9752556085586548
-
-Epoch:8,  Current loss 1.4091784954071045
-
-Epoch:9,  Current loss 1.3109153509140015
-
-Epoch:10,  Current loss 0.9103094339370728
-
-Accuracy:20.0%
+Epoch:1,  Current loss 1.3451334238052368
+Epoch:2,  Current loss 1.0489493608474731
+Epoch:3,  Current loss 1.4939167499542236
+Epoch:4,  Current loss 1.2123924493789673
+Epoch:5,  Current loss 0.7273219227790833
+Epoch:6,  Current loss 1.1074632406234741
+Epoch:7,  Current loss 1.3149948120117188
+Epoch:8,  Current loss 0.9424329996109009
+Epoch:9,  Current loss 2.1591198444366455
+Epoch:10,  Current loss 1.3536250591278076
+Accuracy:16.666666666666664%
 
 ###99
 
